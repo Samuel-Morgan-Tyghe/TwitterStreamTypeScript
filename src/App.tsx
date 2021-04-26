@@ -40,7 +40,7 @@ function App() {
   useEffect(() => {
     const getNewTweets = async () => {
       try {
-        const resp = await axios
+         await axios
           .get<getTweets >("http://localhost:3000/tweets", {
             headers: {
               "Content-Type": "application/json",
@@ -83,7 +83,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         
-          {newTweets.length > 0 ? newTweets.map((tweet , id) => <p key={id}>{tweet}</p>): "nought"}
+          {newTweets.length > 0 ? newTweets.map((tweet , id) => <p key={id}>{tweet}</p>): "Error Loading Tweets"}
 
       </header>
     </div>
